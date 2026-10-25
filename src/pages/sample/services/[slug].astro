@@ -1,0 +1,32 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+
+export async function getStaticPaths() {
+  const services = await getCollection('services');
+  return services.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, summary, seoDescription, limitations } = entry.data;
+---
+<BaseLayout title={entry.data.seoTitle ?? title} description={seoDescription ?? summary}>
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Services (sample)' }, { label: title }]} />
+  <article class="container prose">
+    <h1>{title}</h1>
+    <p class="meta">{summary}</p>
+    <Content />
+    {limitations.length > 0 && (
+      <section aria-labelledby="limits-heading">
+        <h2 id="limits-heading">Limitations</h2>
+        <ul>{limitations.map((l) => <li>{l}</li>)}</ul>
+      </section>
+    )}
+    <section aria-labelledby="enquiry-heading">
+      <h2 id="enquiry-heading">Enquire</h2>
+      <p>The enquiry form is not built. No live enquiries are collected during prototype work.</p>
+      <p><a class="button button-primary" href="/#quote">Get a Quote</a></p>
+    </section>
+  </article>
+</BaseLayout>

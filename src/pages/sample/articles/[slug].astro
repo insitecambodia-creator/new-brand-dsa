@@ -1,0 +1,31 @@
+---
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import Breadcrumb from '../../../components/Breadcrumb.astro';
+
+export async function getStaticPaths() {
+  const articles = await getCollection('articles');
+  return articles.map((entry) => ({ params: { slug: entry.id }, props: { entry } }));
+}
+const { entry } = Astro.props;
+const { Content } = await render(entry);
+const { title, summary, seoDescription, publishedAt, author, relatedServices } = entry.data;
+const fmt = new Intl.DateTimeFormat('en-GB', { dateStyle: 'long', timeZone: 'UTC' });
+---
+<BaseLayout title={entry.data.seoTitle ?? title} description={seoDescription ?? summary}>
+  <Breadcrumb items={[{ label: 'Home', href: '/' }, { label: 'Articles (sample)' }, { label: title }]} />
+  <article class="container prose">
+    <h1>{title}</h1>
+    <p class="meta">
+      {author ? <>By {author}</> : <>Author: not set</>} ·
+      {publishedAt ? <time datetime={publishedAt.toISOString()}>{fmt.format(publishedAt)}</time> : <>Date: not set</>}
+    </p>
+    <Content />
+    {relatedServices.length > 0 && (
+      <aside aria-labelledby="related-heading">
+        <h2 id="related-heading">Related services</h2>
+        <ul>{relatedServices.map((s) => <li><a href={`/sample/services/${s}/`}>{s}</a></li>)}</ul>
+      </aside>
+    )}
+  </article>
+</BaseLayout>

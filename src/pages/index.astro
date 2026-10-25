@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { brand } from '../config/brand';
+
+const routes = [
+  { title: 'Personal Insurance', text: 'Placeholder description of the personal audience route.' },
+  { title: 'Employee Benefits', text: 'Placeholder description of the employer benefits route.' },
+  { title: 'Business Insurance', text: 'Placeholder description of the business route.' },
+];
+---
+<BaseLayout title={brand.displayName} description="Local prototype homepage with sample content.">
+  <section class="hero">
+    <div class="container prose">
+      <h1>{brand.displayName}</h1>
+      <p>Neutral homepage placeholder. Final proposition, credentials and group relationship require client-approved copy.</p>
+      <p><a class="button button-primary" href="#quote">Get a Quote</a></p>
+    </div>
+  </section>
+  <section class="container" aria-labelledby="routes-heading">
+    <h2 id="routes-heading">Choose your route</h2>
+    <ul class="cards">
+      {routes.map((r) => (
+        <li class="card">
+          <h3><a href="/sample/services/sample-service/">{r.title}</a></h3>
+          <p>{r.text}</p>
+        </li>
+      ))}
+    </ul>
+  </section>
+  <section class="container prose" id="about">
+    <h2>About</h2>
+    <p>Placeholder for approved company information. No credentials, awards or testimonials are asserted here.</p>
+  </section>
+  <section class="container prose" id="quote" aria-labelledby="quote-heading">
+    <h2 id="quote-heading">Get a Quote</h2>
+    <p>Placeholder. The quote form is not built; no live enquiries are collected during prototype work.</p>
+  </section>
+  <section class="container" aria-labelledby="resources-heading">
+    <h2 id="resources-heading">Resources</h2>
+    <p><a href="/sample/articles/sample-article/">Sample article</a></p>
+  </section>
+</BaseLayout>

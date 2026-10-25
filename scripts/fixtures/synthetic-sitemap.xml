@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- SYNTHETIC test fixture. Not real DSA data. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url><loc>https://example.invalid/a/</loc><lastmod>2020-01-02T03:04:05+00:00</lastmod>
+    <image:image><image:loc>https://example.invalid/img/1.jpg</image:loc></image:image>
+    <image:image><image:loc>https://example.invalid/img/2.jpg</image:loc></image:image></url>
+  <url><loc>https://example.invalid/b/?x=1&amp;y=2</loc></url>
+  <url><loc>https://example.invalid/c/</loc><lastmod>2021-05-06T00:00:00+00:00</lastmod></url>
+</urlset>

@@ -1,0 +1,17 @@
+---
+import { brand, navigation } from '../config/brand';
+---
+<header class="site-header">
+  <div class="container">
+    <a class="brand" href="/">{brand.logo ? <img src={brand.logo.src} alt={brand.logo.alt} /> : brand.displayName}</a>
+    <nav class="site-nav" aria-label="Main">
+      <ul>
+        {navigation.map((item) => <li><a href={item.href}>{item.label}</a></li>)}
+      </ul>
+    </nav>
+    <div class="header-actions">
+      <a class="button button-secondary" href="/#contact">Contact</a>
+      <a class="button button-primary" href="/#quote">Get a Quote</a>
+    </div>
+  </div>
+</header>

@@ -1,0 +1,37 @@
+---
+import '../styles/global.css';
+import { brand } from '../config/brand';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** Show the "sample content" banner. Remove only for reviewed content. */
+  sample?: boolean;
+}
+const { title, description, sample = true } = Astro.props;
+const fullTitle = title === brand.displayName ? title : `${title} | ${brand.displayName}`;
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    {description && <meta name="description" content={description} />}
+    {brand.noindex && <meta name="robots" content="noindex, nofollow" />}
+    <!-- No canonical URL or favicon: production domain and brand assets are undecided. -->
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to main content</a>
+    {sample && (
+      <div class="sample-banner" role="note">
+        <div class="container"><strong>Local prototype.</strong> Layout demonstration with sample content only. Not a real {brand.displayName} page.</div>
+      </div>
+    )}
+    <Header />
+    <main id="main"><slot /></main>
+    <Footer />
+  </body>
+</html>
