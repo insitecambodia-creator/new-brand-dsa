@@ -34,7 +34,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | `/services/term-life-insurance/` | Life & Income Protection / Term life | high |  |
 | `/services/critical-illness/` | Life & Income Protection / Critical illness | high |  |
 | `/services/income-protection/` | Life & Income Protection / Income protection | high |  |
-| `/services/fine-art-collectibles/` | Home & Lifestyle / Fine art & collectibles | high | flags: overlap-with-article — Overlaps fine-art articles (see resources). |
+| `/services/fine-art-collectibles/` | Home & Lifestyle / Fine art & collectibles | high | flags: subject-similarity-to-verify — Fine-art articles with a similar subject by title exist; content not compared. |
 | `/services/relocation-insurance/` | Home & Lifestyle / Relocation | high | flags: relocation-cluster |
 | `/services/life/` | Life & Income Protection / Overview? | low | flags: unclear-purpose — Slug "life" sits beside the overview pages; purpose unverified. |
 | `/services/personal-insurance/` | Overview | high |  |
@@ -50,7 +50,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | `/services/better-mental-health-in-the-workplace/` | Benefits & Wellbeing Services / Mental health at work | high |  |
 | `/services/flexible-benefits/` | Benefits & Wellbeing Services / Flexible benefits | high |  |
 | `/services/employee-assistance-program-eap/` | Benefits & Wellbeing Services / EAP | high |  |
-| `/services/group-dental/` | Group dental | high | flags: dental-wording-check, duplicate-candidate — Also see root post /group-dental-insurance/. Group dental wording needs client confirmation (brief s8). |
+| `/services/group-dental/` | Group dental | high | flags: dental-wording-check, subject-similarity-to-verify — A post-type URL with a similar subject by title exists (/group-dental-insurance/); content not compared. Group dental wording needs client confirmation (brief s8). |
 | `/services/group-medical/` | Group medical | high |  |
 | `/services/group-critical-illness/` | Group critical illness | high |  |
 | `/services/group-personal-accident/` | Group personal accident | high |  |
@@ -145,7 +145,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 - `/what-is-personal-liability-insurance/` (high)
 - `/home-contents-insurance-singapore-what-hdb-fire-insurance-doesnt-cover/` (high) — flags: home-contents-cluster
 - `/how-to-choose-the-best-travel-insurance-for-your-next-trip/` (high)
-- `/fine-art-insurance-singapore-2026/` (high) — flags: fine-art-cluster, year-specific, overlap-with-service-page
+- `/fine-art-insurance-singapore-2026/` (high) — flags: fine-art-cluster, year-specific, subject-similarity-to-verify
 
 ### Articles: living-in-singapore (13)
 
@@ -199,7 +199,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 
 - `/happyinternationalwomensday/` (low) — flags: thin-social-post
 - `/expat-insurance-awarded-domestic-broker-of-the-year-singapore-category/` (high) — flags: also-relevant-to-about-awards
-- `/singapore-is-hosting-asias-biggest-healthcare-exhibition-this-september-heres-what-it-means-for-your-insurance/` (low) — flags: event-news, likely-time-bound
+- `/singapore-is-hosting-asias-biggest-healthcare-exhibition-this-september-heres-what-it-means-for-your-insurance/` (low) — flags: event-news, time-sensitivity-to-check
 
 ### Articles: unassigned (1)
 
@@ -231,18 +231,18 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | `/services/group-term-life-insurance/` | Group term life | high | if kept: employee-benefits — flags: brief-s5:group-term-life-pair — Compare with /services/group-term-life/ and choose a primary page; no merge approved. |
 | `/services/active-travel/` |  | low | if kept: personal-insurance — flags: unclear-purpose — Not in the brief IA. May relate to travel insurance or an active-lifestyle product; zero images in sitemap. |
 | `/services/group-term-life/` | Group term life | high | if kept: employee-benefits — flags: brief-s5:group-term-life-pair — As above. |
-| `/services/engagement-ring-insurance-4/` | Home & Lifestyle / Jewellery & watches | low | if kept: personal-insurance — flags: brief-s5:jewellery-set, suffix-4-suggests-duplicate — Slug suffix "-4" may indicate duplicate/regenerated slug; zero images. |
-| `/luxury-watch-jewellery-insurance/` | Home & Lifestyle / Jewellery & watches | low | if kept: personal-insurance — flags: brief-s5:jewellery-set, possible-campaign-landing — Root-level path outside /services/ suggests a landing page; unverified. |
+| `/services/engagement-ring-insurance-4/` | Home & Lifestyle / Jewellery & watches | low | if kept: personal-insurance — flags: brief-s5:jewellery-set, slug-suffix-to-check — Slug ends in '-4'; reason unknown (content not read). Zero images in sitemap. Part of the jewellery/watch/ring set in brief s5. |
+| `/luxury-watch-jewellery-insurance/` | Home & Lifestyle / Jewellery & watches | low | if kept: personal-insurance — flags: brief-s5:jewellery-set, role-unknown — Sits outside /services/ unlike its siblings; role (service page, landing page or other) unknown until content/template and ad usage are checked. |
 | `/pge-test/` |  | high | flags: brief-s5:candidate-for-exclusion — Brief s5: verify purpose; candidate for exclusion. |
 | `/services/medical-insurance/` | Health & Medical / Medical insurance overview? | medium | if kept: personal-insurance — flags: brief-s5:medical-overview-hospital-ipmi — Establish purpose vs hospital cover and IPMI before placement. |
 | `/services/home-contents/` | Home & Lifestyle / Home & contents | medium | if kept: personal-insurance — flags: brief-s5:home-vs-home-contents — Distinguish overview from product detail. |
 | `/services/hospital-surgical-insurance/` | Health & Medical / Hospital & surgical | medium | if kept: personal-insurance — flags: brief-s5:medical-overview-hospital-ipmi — As above. |
-| `/services/jewellery-watch-insurance/` | Home & Lifestyle / Jewellery & watches | medium | if kept: personal-insurance — flags: brief-s5:jewellery-set — Assess separate search intent and overlap with the luxury and engagement-ring pages. |
+| `/services/jewellery-watch-insurance/` | Home & Lifestyle / Jewellery & watches | medium | if kept: personal-insurance — flags: brief-s5:jewellery-set — Brief s5: assess search intent and content relationship with the luxury-watch/jewellery and engagement-ring URLs. Content not compared. |
 | `/services/home-insurances/` | Home & Lifestyle / Home overview? | medium | if kept: personal-insurance — flags: brief-s5:home-vs-home-contents — As above. |
 | `/thank-you-diot-siaci-asia/` | Form/download thank-you | medium | if kept: campaigns — flags: brief-s5:thank-you, old-brand-in-slug — Preserve necessary conversion journeys; normally exclude from index/sitemap. Slug contains the current brand name, relevant to URL-map decisions. |
-| `/group-dental-insurance/` | Group dental | medium | if kept: employee-benefits — flags: dental-wording-check, duplicate-candidate — Post-type URL at root duplicates /services/group-dental/ in subject; compare content. Group dental wording needs client confirmation. |
-| `/need-insurance-singapore/` |  | low | flags: unclear-purpose, possible-campaign-landing — Post-type URL with a generic acquisition-style slug; may be an ad/landing page. |
-| `/business/` |  | low | if kept: business-insurance — flags: unclear-purpose — Post-type URL with slug "business"; may be a landing/overview page rather than an article. |
+| `/group-dental-insurance/` | Group dental | medium | if kept: employee-benefits — flags: dental-wording-check, subject-similarity-to-verify — Post-type URL at the site root; subject is similar by title to /services/group-dental/. Content not read: whether it is a service page, an article or something else is unknown. Group dental wording needs client confirmation. |
+| `/need-insurance-singapore/` |  | low | flags: unclear-purpose, role-unknown — Post-type URL; purpose unknown (article, landing page or other). Check template, content and whether any ad uses it. |
+| `/business/` |  | low | if kept: business-insurance — flags: unclear-purpose — Post-type URL; purpose unknown (article, overview, landing page or other). Check template and content. |
 
 ## Review flags (all groups)
 
@@ -254,6 +254,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | year-specific | 5 |
 | facts-recheck | 5 |
 | unclear-purpose | 4 |
+| subject-similarity-to-verify | 4 |
 | brief-s5:medical-overview-hospital-ipmi | 4 |
 | home-contents-cluster | 4 |
 | life-cluster | 4 |
@@ -264,8 +265,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | sme-cluster | 3 |
 | brief-s5:group-term-life-pair | 2 |
 | legal-copy-needs-client-approval | 2 |
-| duplicate-candidate | 2 |
-| possible-campaign-landing | 2 |
+| role-unknown | 2 |
 | form-flow | 2 |
 | brief-s5:home-vs-home-contents | 2 |
 | foreign-worker-pair | 2 |
@@ -273,10 +273,9 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | broker-explainer-pair | 2 |
 | brief-s5:services-directory | 1 |
 | downloads-unverified | 1 |
-| suffix-4-suggests-duplicate | 1 |
+| slug-suffix-to-check | 1 |
 | brief-s5:candidate-for-exclusion | 1 |
 | tracking-audit | 1 |
-| overlap-with-article | 1 |
 | brief-s5:thank-you | 1 |
 | old-brand-in-slug | 1 |
 | thin-social-post | 1 |
@@ -284,5 +283,4 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | also-relevant-to-about-awards | 1 |
 | may-fit-about-us | 1 |
 | event-news | 1 |
-| likely-time-bound | 1 |
-| overlap-with-service-page | 1 |
+| time-sensitivity-to-check | 1 |
