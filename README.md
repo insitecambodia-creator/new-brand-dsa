@@ -17,7 +17,8 @@ Private, local-only foundation for the Astro replacement of https://asia.diot-si
 | `npm run preview` | Serve the build locally |
 | `npm run check` | Astro/TypeScript diagnostics and content-schema validation |
 | `npm run inventory` | Build the URL inventory from the sitemap XML files in `docs/source/` |
-| `npm run test:inventory` | Unit tests for the inventory parser (synthetic fixture) |
+| `npm run grouping` | Validate `docs/inventory/url-grouping.csv` against the inventory and regenerate `proposed-grouping.md` |
+| `npm run test:inventory` | Unit tests for the inventory parser and grouping validator |
 
 ## What exists
 
@@ -25,6 +26,7 @@ Private, local-only foundation for the Astro replacement of https://asia.diot-si
 - All sample routes live under `/sample/` so they cannot be mistaken for migrated URLs. Pages are `noindex` (`src/config/brand.ts`), show a "sample content" banner and emit no canonical URL, sitemap or placeholder domain.
 - `src/config/brand.ts` — central brand settings (all placeholders). `src/content.config.ts` — provisional schemas for services and articles.
 - `scripts/build-url-inventory.mjs` — reproducible sitemap parser. Writes `docs/inventory/url-inventory.{json,csv}`.
+- `docs/inventory/` — inventory (161 URLs), `inventory-report.md`, proposed grouping. `docs/security-advisories.md` — dependency advisory record and engine requirements.
 
 ## Content editing
 

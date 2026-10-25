@@ -7,20 +7,20 @@ Status: provisional, 2026-10-25. Nothing below is approved beyond local, reversi
 | Item | Status |
 |---|---|
 | Project brief | Present (`DSA_Astro_Project_Brief.md`) |
-| Page sitemap XML | **Missing** from repo and machine |
-| Post sitemap XML | **Missing** from repo and machine |
+| Page sitemap XML | Present: `docs/source/XML Sitemappage.xml` (59 URLs) |
+| Post sitemap XML | Present: `docs/source/XML Sitemap.xml` (102 URLs) |
 | Live site access | Not attempted; brief reports a CAPTCHA and the sandbox network is restricted |
 | WordPress export / media bytes / SEO plugin fields | Not available |
 | Search Console / GA4 data | Not available |
 | Existing GTM / tracking audit | Not available |
 | Approved brand, domain, contact, legal copy | Not available (unknown by design) |
 
-The 161-URL figure and image counts come from the brief and are **unverified by me**. I have not read the XML files.
+The 161-URL figure and image counts were verified against the supplied XML on 2026-10-25 (see `docs/inventory/inventory-report.md`).
 
 ## 2. Phases
 
 1. **Foundation (done locally):** Astro project, brand config, schemas, three representative templates, inventory script.
-2. **Inventory (blocked on XML):** place files in `docs/source/`, run `npm run inventory`, confirm counts match the brief, then add a review column workflow (keep / update / merge / redirect / exclude / unresolved).
+2. **Inventory (done; review pending):** `npm run inventory` and `npm run grouping` produce `docs/inventory/`. Next: Franck reviews `proposed-grouping.md`/`url-grouping.csv`, then dispositions (keep / update / merge / redirect / exclude / unresolved) are decided. Project is not expanded until then.
 3. **Content extraction:** decide the route (WordPress XML export, REST API, or manual) once Franck confirms access. Download and verify media. Classify articles from actual content.
 4. **Templates:** add section overview, resource listing with topic filter and pagination, guide/video, campaign landing, standard information. Build only as real content needs them.
 5. **Forms and tracking:** after decisions on delivery, spam protection, consent, CRM; audit GTM (`Clickr` tags) and the IPMI thank-you flow first.
@@ -42,4 +42,4 @@ See the final report in the session and `README.md`. Re-run: `npm run check && n
 
 ## 5. Next recommended step
 
-Franck supplies the two sitemap XML files (and, if possible, a WordPress export). Then run the inventory and review the real URL groups against section 5 of the brief before building more templates.
+Franck reviews the proposed grouping (start with the 16 `requires-review` rows and the `low`-confidence rows). A WordPress export would let article topics and dates be verified from content.

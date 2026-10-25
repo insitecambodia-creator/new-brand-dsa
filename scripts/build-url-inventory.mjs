@@ -1,9 +1,11 @@
 #!/usr/bin/env node
 // Builds a reproducible URL inventory from the two supplied WordPress sitemap exports.
 // No dependencies. Usage: node scripts/build-url-inventory.mjs [--pages FILE] [--posts FILE] [--out DIR]
+// Default inputs: page sitemap = 'XML Sitemappage.xml', post sitemap = 'XML Sitemap.xml' (names as supplied).
 // <lastmod> is recorded as "lastmod" only. It is NOT a publication date.
 import { readFileSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { resolve, relative } from 'node:path';
+import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 
 const ENTITIES = { '&amp;': '&', '&lt;': '<', '&gt;': '>', '&quot;': '"', '&apos;': "'" };
@@ -32,10 +34,10 @@ export function parseSitemap(xml) {
 export function buildInventory(sources) {
   const rows = [];
   const summary = {};
-  for (const { sourceType, file, xml } of sources) {
+  for (const { sourceType, file, xml, sha256 } of sources) {
     const entries = parseSitemap(xml);
     const uniqueImages = new Set(entries.flatMap((e) => e.images));
-    summary[sourceType] = { sourceFile: file, urlCount: entries.length, uniqueImageUrls: uniqueImages.size };
+    summary[sourceType] = { sourceFile: file, sha256: sha256 ?? null, urlCount: entries.length, uniqueImageUrls: uniqueImages.size };
     for (const e of entries) {
       rows.push({
         sourceType,
@@ -59,18 +61,19 @@ export const toCsv = (rows) =>
 
 function main() {
   const args = Object.fromEntries(process.argv.slice(2).reduce((a, x, i, all) => (x.startsWith('--') ? [...a, [x.slice(2), all[i + 1]]] : a), []));
-  const pages = resolve(args.pages ?? 'docs/source/XML Sitemap.xml');
-  const posts = resolve(args.posts ?? 'docs/source/XML Sitemap(1).xml');
+  const pages = resolve(args.pages ?? 'docs/source/XML Sitemappage.xml');
+  const posts = resolve(args.posts ?? 'docs/source/XML Sitemap.xml');
   const out = resolve(args.out ?? 'docs/inventory');
   const missing = [pages, posts].filter((f) => !existsSync(f));
   if (missing.length) {
     console.error(`Source sitemap file(s) not found:\n${missing.map((f) => `  - ${f}`).join('\n')}\nPlace them in docs/source/ (see docs/source/README.md). Nothing was written.`);
     process.exit(1);
   }
-  const { rows, summary } = buildInventory([
-    { sourceType: 'page', file: pages, xml: readFileSync(pages, 'utf8') },
-    { sourceType: 'post', file: posts, xml: readFileSync(posts, 'utf8') },
-  ]);
+  const load = (sourceType, f) => {
+    const buf = readFileSync(f);
+    return { sourceType, file: relative(process.cwd(), f), xml: buf.toString('utf8'), sha256: createHash('sha256').update(buf).digest('hex') };
+  };
+  const { rows, summary } = buildInventory([load('page', pages), load('post', posts)]);
   summary.note = 'Image counts are per file; do not add them to claim a deduplicated total. lastmod is not a publication date.';
   const expected = { page: [59, 183], post: [102, 134] }; // from the project brief, section 3
   for (const [type, [urls, imgs]] of Object.entries(expected)) {

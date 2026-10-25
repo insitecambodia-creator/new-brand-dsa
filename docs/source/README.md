@@ -1,10 +1,10 @@
 # Source files
 
-Place the supplied sitemap exports here, with these names (the inventory script expects them):
+Supplied sitemap exports (unchanged originals):
 
-- `XML Sitemap.xml` — page sitemap (brief: 59 URLs, 183 unique image URLs)
-- `XML Sitemap(1).xml` — post sitemap (brief: 102 URLs, 134 unique image URLs)
+- `XML Sitemappage.xml` — **page** sitemap (59 URLs, 183 unique image URLs)
+- `XML Sitemap.xml` — **post** sitemap (102 URLs, 134 unique image URLs)
 
-Then run `npm run inventory`. Other source material (WordPress export, analytics extracts) can go here too, but never commit customer data, lead exports or credentials.
+Note the file names are the reverse of the brief's naming; roles were assigned from content. SHA-256 hashes are in `docs/inventory/inventory-report.md`. Run `npm run inventory` to regenerate the inventory.
 
-**Status at 2026-10-25: neither file is in the repository.** The inventory has not been produced.
+Other source material (WordPress export, analytics extracts) can go here, but never commit customer data, lead exports or credentials.

@@ -12,7 +12,8 @@
     "preview": "astro preview",
     "check": "astro check",
     "inventory": "node scripts/build-url-inventory.mjs",
-    "test:inventory": "node --test scripts/*.test.mjs"
+    "test:inventory": "node --test scripts/*.test.mjs",
+    "grouping": "node scripts/grouping.mjs"
   },
   "dependencies": {
     "astro": "7.4.2"
