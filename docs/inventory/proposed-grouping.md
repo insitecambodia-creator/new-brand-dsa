@@ -40,7 +40,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | `/services/personal-insurance/` | Overview | high |  |
 | `/services/gp-and-specialist/` | Health & Medical / GP & specialist | high |  |
 | `/services/top-up-coverage/` | Health & Medical / Top-up coverage | high | flags: top-up-cluster — Related to several top-up articles. |
-| `/services/dental-insurance/` | Health & Medical / Dental (add-on only) | high | flags: dental-wording-check — Brief s8: dental is an add-on, never standalone; do not reuse historical wording or prices. |
+| `/services/dental-insurance/` | Health & Medical / Dental (add-on only) | high | flags: individual-dental-addon-requirement — INDIVIDUAL dental: brief s8 requires add-on positioning only; never a standalone individual programme; no historical wording/prices. Assessed separately from group dental. |
 
 ## employee-benefits (12)
 
@@ -50,7 +50,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | `/services/better-mental-health-in-the-workplace/` | Benefits & Wellbeing Services / Mental health at work | high |  |
 | `/services/flexible-benefits/` | Benefits & Wellbeing Services / Flexible benefits | high |  |
 | `/services/employee-assistance-program-eap/` | Benefits & Wellbeing Services / EAP | high |  |
-| `/services/group-dental/` | Group dental | high | flags: dental-wording-check, subject-similarity-to-verify — A post-type URL with a similar subject by title exists (/group-dental-insurance/); content not compared. Group dental wording needs client confirmation (brief s8). |
+| `/services/group-dental/` | Group dental | high | flags: group-dental-product-assessment, subject-similarity-to-verify — A post-type URL with a similar subject by title exists (/group-dental-insurance/); content not compared. Group dental is assessed as its own product; the individual add-on requirement is not applied to it automatically. Wording and availability need client confirmation. |
 | `/services/group-medical/` | Group medical | high |  |
 | `/services/group-critical-illness/` | Group critical illness | high |  |
 | `/services/group-personal-accident/` | Group personal accident | high |  |
@@ -79,7 +79,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 - `/videos/` — Videos (medium)
 - `/download-guides/` — Downloadable guides (medium)
 
-### Articles: health-medical (25)
+### Articles: health-medical (24)
 
 - `/on-the-right-foot-your-guide-to-avoiding-common-running-injuries/` (low)
 - `/digital-detox-how-unplugging-can-improve-your-health-and-well-being/` (medium)
@@ -95,7 +95,6 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 - `/insuring-your-health-wellness-the-4-different-types-of-insurance-plans-in-singapore/` (medium)
 - `/optimise-your-coverage-the-benefits-of-top-up-insurance-plans/` (high) — flags: top-up-cluster
 - `/foreign-worker-medical-insurance-what-should-i-know/` (low) — flags: foreign-worker-pair
-- `/insurance-broker-or-agent-the-best-medical-insurance-plans-for-you/` (low) — flags: broker-explainer-pair
 - `/best-health-insurance-for-pre-existing-conditions/` (high)
 - `/coverage-for-dengue-medical-insurance-in-singapore/` (high)
 - `/what-is-a-top-up-plan-and-why-is-it-important-to-have-one/` (high) — flags: top-up-cluster
@@ -201,9 +200,10 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 - `/expat-insurance-awarded-domestic-broker-of-the-year-singapore-category/` (high) — flags: also-relevant-to-about-awards
 - `/singapore-is-hosting-asias-biggest-healthcare-exhibition-this-september-heres-what-it-means-for-your-insurance/` (low) — flags: event-news, time-sensitivity-to-check
 
-### Articles: unassigned (1)
+### Articles: unassigned (2)
 
-- `/direct-vs-agent-vs-broker-for-your-insurance-needs-same-same-or-different/` (low) — flags: broker-explainer-pair, may-fit-about-us
+- `/insurance-broker-or-agent-the-best-medical-insurance-plans-for-you/` (low) — flags: broker-vs-agent, provisional-insurance-explained
+- `/direct-vs-agent-vs-broker-for-your-insurance-needs-same-same-or-different/` (low) — flags: broker-vs-agent, provisional-insurance-explained
 
 ## about-contact-legal (6)
 
@@ -240,7 +240,7 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | `/services/jewellery-watch-insurance/` | Home & Lifestyle / Jewellery & watches | medium | if kept: personal-insurance — flags: brief-s5:jewellery-set — Brief s5: assess search intent and content relationship with the luxury-watch/jewellery and engagement-ring URLs. Content not compared. |
 | `/services/home-insurances/` | Home & Lifestyle / Home overview? | medium | if kept: personal-insurance — flags: brief-s5:home-vs-home-contents — As above. |
 | `/thank-you-diot-siaci-asia/` | Form/download thank-you | medium | if kept: campaigns — flags: brief-s5:thank-you, old-brand-in-slug — Preserve necessary conversion journeys; normally exclude from index/sitemap. Slug contains the current brand name, relevant to URL-map decisions. |
-| `/group-dental-insurance/` | Group dental | medium | if kept: employee-benefits — flags: dental-wording-check, subject-similarity-to-verify — Post-type URL at the site root; subject is similar by title to /services/group-dental/. Content not read: whether it is a service page, an article or something else is unknown. Group dental wording needs client confirmation. |
+| `/group-dental-insurance/` | Group dental | medium | if kept: employee-benefits — flags: group-dental-product-assessment, subject-similarity-to-verify — Post-type URL at the site root; subject is similar by title to /services/group-dental/. Content not read: whether it is a service page, an article or something else is unknown. Group dental is assessed as its own product, separately from the individual dental add-on requirement; wording and availability need client confirmation. |
 | `/need-insurance-singapore/` |  | low | flags: unclear-purpose, role-unknown — Post-type URL; purpose unknown (article, landing page or other). Check template, content and whether any ad uses it. |
 | `/business/` |  | low | if kept: business-insurance — flags: unclear-purpose — Post-type URL; purpose unknown (article, overview, landing page or other). Check template and content. |
 
@@ -259,18 +259,19 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | home-contents-cluster | 4 |
 | life-cluster | 4 |
 | hub-page | 3 |
-| dental-wording-check | 3 |
 | brief-s5:jewellery-set | 3 |
 | cyber-cluster | 3 |
 | sme-cluster | 3 |
 | brief-s5:group-term-life-pair | 2 |
 | legal-copy-needs-client-approval | 2 |
+| group-dental-product-assessment | 2 |
 | role-unknown | 2 |
 | form-flow | 2 |
 | brief-s5:home-vs-home-contents | 2 |
 | foreign-worker-pair | 2 |
 | fine-art-cluster | 2 |
-| broker-explainer-pair | 2 |
+| broker-vs-agent | 2 |
+| provisional-insurance-explained | 2 |
 | brief-s5:services-directory | 1 |
 | downloads-unverified | 1 |
 | slug-suffix-to-check | 1 |
@@ -278,9 +279,9 @@ Generated from `url-grouping.csv` by `npm run grouping`. **Proposal only**: clas
 | tracking-audit | 1 |
 | brief-s5:thank-you | 1 |
 | old-brand-in-slug | 1 |
+| individual-dental-addon-requirement | 1 |
 | thin-social-post | 1 |
 | ipmi-related | 1 |
 | also-relevant-to-about-awards | 1 |
-| may-fit-about-us | 1 |
 | event-news | 1 |
 | time-sensitivity-to-check | 1 |

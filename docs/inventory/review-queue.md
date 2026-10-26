@@ -30,7 +30,7 @@ All three are in the post sitemap, at the site root. Whether any is an article o
 
 | # | Existing URL | Proposed location (provisional) | Reason for review | Evidence needed to decide |
 |---|---|---|---|---|
-| 14 | `/group-dental-insurance/` | Employee Benefits > Group dental (candidate) | Post-type URL; a service page `/services/group-dental/` has a similar subject by title. Group dental wording needs client confirmation (brief s8). | WP export: post type/template, categories, body, dates. Read it against `/services/group-dental/`. Client: approved group dental wording; check for standalone-dental or "No Medical Plan Required" style claims. Analytics: traffic. |
+| 14 | `/group-dental-insurance/` | Employee Benefits > Group dental (candidate) | Post-type URL; a service page `/services/group-dental/` has a similar subject by title. Assessed as a **group product**, separately from the individual dental add-on requirement (brief s8), which is tracked only on `/services/dental-insurance/`. | WP export: post type/template, categories, body, dates. Read it against `/services/group-dental/`. Client: confirmed group dental wording and availability. Analytics: traffic. |
 | 15 | `/business/` | Business Insurance > Overview (candidate) or Resources | Purpose unknown: article, overview, landing page or other. | WP export: template, categories, body. Internal links and menu usage. Analytics: traffic. |
 | 16 | `/need-insurance-singapore/` | Undecided | Purpose unknown; could be an article, landing page or other. | WP export: template, body. Analytics/Ads: any campaign, UTM or final-URL use. Internal links. Traffic. |
 
@@ -38,7 +38,7 @@ All three are in the post sitemap, at the site root. Whether any is an article o
 
 | # | Existing URL | Current proposed group | Reason for review | Evidence needed to decide |
 |---|---|---|---|---|
-| 17 | `/direct-vs-agent-vs-broker-for-your-insurance-needs-same-same-or-different/` | Resources > Articles; topic **unassigned** | No topic in the provisional list fits by title. It may belong with the About Us "how the broker helps clients" content, or in an existing topic. Another article by title (`/insurance-broker-or-agent-the-best-medical-insurance-plans-for-you/`) has a related subject; content not compared. | WP export: body, categories/tags, author, publication date. Whether About/Home currently links to it. Analytics: traffic and queries. Client: whether it makes regulatory or comparative claims needing approval. |
+| 17 | `/direct-vs-agent-vs-broker-for-your-insurance-needs-same-same-or-different/` | **Resources > Insurance Explained** (provisional, decided 2026-10-26); may also relate to About Us | Classification is provisional and title-based. `/insurance-broker-or-agent-the-best-medical-insurance-plans-for-you/` has a related subject by title and is provisionally placed in the same sub-section; content of neither compared. | WP export: body, categories/tags, author, publication date. Whether About/Home links to it. Analytics: traffic and queries. Client: whether it makes regulatory or comparative claims needing approval. |
 
 ### IPMI: two roles, assessed separately
 
@@ -55,3 +55,11 @@ The landing page is currently grouped under Campaigns. Its campaign role and any
 Likely to provide: post type and status, templates (page/post), parent/child relationships, publication and modified dates, authors, categories and tags, body content, and usually SEO-plugin fields (the brief warns these may be incomplete). Elementor layout and form settings may not export usefully.
 
 Will not provide: traffic, queries, rankings, ad usage, conversion tracking, GTM contents, or client decisions. Rows 1 to 13, 16 and 18a/b/c depend on those sources.
+
+
+## Update 2026-10-26
+
+- Added to the review set once content is available: `/services/life/` (Personal Insurance, low confidence, unclear purpose).
+- Broker-versus-agent articles (rows 17 and `/insurance-broker-or-agent-the-best-medical-insurance-plans-for-you/`) are provisionally under Resources > Insurance Explained; confirm from content.
+- Individual dental (add-on requirement) and group dental (product assessment) are separate review tracks.
+- WordPress export not yet received; nothing in this file has been checked against content.

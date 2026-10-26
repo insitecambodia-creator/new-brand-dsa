@@ -23,10 +23,15 @@ Status values: **Decided** (made within brief scope), **Assumed** (provisional, 
 | O-004 | | Hosting provider and preview access control | **Open** | No preview until instructed |
 | O-005 | | Form delivery, CRM, spam protection, consent copy | **Open** | |
 | O-006 | | Analytics/consent approach; GTM `Clickr` tag audit | **Open** | |
-| O-007 | | Content extraction route (WP export / API) and media access | **Open** | |
+| O-007 | | Content extraction route (WP export / API) and media access | **Open** | WP export to be supplied; see D-021 |
 | O-008 | | Disposition of items in brief section 5 (duplicates, `/pge-test/`, old articles) | **Open** | Needs content and analytics review |
 | D-014 | 2026-10-25 | Sitemap roles assigned from file content: `XML Sitemappage.xml` = pages (59), `XML Sitemap.xml` = posts (102). Originals kept unchanged in `docs/source/` | Decided | Names are swapped vs the brief; counts match the brief exactly. See docs/inventory/inventory-report.md |
 | D-015 | 2026-10-25 | Proposed grouping lives in `docs/inventory/url-grouping.csv`; every row keeps `disposition = unresolved`; validator fails if any inventory URL is missing, duplicated or invented | Decided | No merge/delete/redirect/route change is approved |
 | D-016 | 2026-10-25 | Grouping uses an extra `home` value for `/` and a `requires-review` group that records `suggested_group_if_kept`; confidence is slug-only | Assumed | `/` fits none of the seven requested groups; slugs alone are insufficient for final classification (brief s4) |
 | D-017 | 2026-10-25 | Article topics are proposals from titles/slugs; one article is `unassigned` | Assumed | Brief: assign after reviewing actual content |
 | D-018 | 2026-10-25 | Local project stays unexpanded (no new templates, content, forms or routes) until Franck reviews the inventory | Decided | Instruction 2026-10-25 |
+| D-019 | 2026-10-26 | Broker-versus-agent articles are provisionally classified under Resources > Insurance Explained | Decided (provisional) | Franck's instruction. Applied to `/direct-vs-agent-vs-broker-...` and, by title, `/insurance-broker-or-agent-the-best-medical-insurance-plans-for-you/`; confirm from content. Resources > Insurance Explained is not yet in the provisional topic list |
+| D-020 | 2026-10-26 | Individual dental add-on requirements and group dental product assessment are separate tracks | Decided | Brief s8 restriction applies to individual dental; group dental is assessed as its own product. CSV flags renamed accordingly |
+| D-021 | 2026-10-26 | Raw WordPress export is not committed until checked for sensitive data; `private/` is git-ignored for local inspection | Decided | Franck's instruction |
+| D-022 | 2026-10-26 | `/services/life/` joins the content review alongside the 16 queued rows | Decided | Franck's instruction |
+| D-023 | 2026-10-26 | Planning scripts and templates paused | Decided | Franck's instruction; inspection of the export will use ad-hoc commands, not new committed tooling |

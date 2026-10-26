@@ -6,3 +6,6 @@ dist/
 !.env.example
 .DS_Store
 *.log
+
+# Raw exports and anything not yet checked for sensitive data. Never commit.
+private/
